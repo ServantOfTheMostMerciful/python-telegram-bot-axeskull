@@ -34,6 +34,7 @@ from typing import (
     List,
     NoReturn,
     Optional,
+    Self,
     Sequence,
     Tuple,
     Type,
@@ -754,8 +755,8 @@ class Bot(TelegramObject, AsyncContextManager["Bot"]):
 
     @_log
     async def get_me(
-        self,
         *,
+        self: Optional[Self] = None,
         read_timeout: ODVInput[float] = DEFAULT_NONE,
         write_timeout: ODVInput[float] = DEFAULT_NONE,
         connect_timeout: ODVInput[float] = DEFAULT_NONE,
